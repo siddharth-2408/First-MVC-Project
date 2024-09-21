@@ -24,13 +24,18 @@ public class RegisterChecker extends HttpServlet
     {
         String password = request.getParameter("password");
         String confirm = request.getParameter("confirmpassword");
+        String username = request.getParameter("username");
+        String salary = request.getParameter("salary");
+        String city = request.getParameter("city");
+        String id = request.getParameter("id");
 
-        if(password.equals(confirm))
+        if(username.equals("")&&password.equals("")&&salary.equals("")&&city.equals("")&&id.equals(""))
         {
-            String username = request.getParameter("username");
-            String salary = request.getParameter("salary");
-            String city = request.getParameter("city");
-            String id = request.getParameter("id");
+            response.sendRedirect("register2.html");
+        }
+        else if(password.equals(confirm))
+        {
+            
             
             RegisterDTO user = new RegisterDTO();
             user.setUsername(username);
@@ -48,7 +53,6 @@ public class RegisterChecker extends HttpServlet
                 session.setAttribute("username", username);
                 response.sendRedirect("home.jsp");
             }
-            
         }
         else
             response.sendRedirect("register2.html");
