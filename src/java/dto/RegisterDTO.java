@@ -56,6 +56,4 @@ public class RegisterDTO
     {
         this.id = id;
     }
-    
-    
 }
