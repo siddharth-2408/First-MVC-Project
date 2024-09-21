@@ -8,13 +8,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import model.LoginAuthenticator;
+import model.AdminAuthenticator;
 
 /**
  *
  * @author rajes
  */
-public class LoginChecker extends HttpServlet 
+public class AdminChecker extends HttpServlet 
 {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
     {
@@ -30,17 +30,17 @@ public class LoginChecker extends HttpServlet
         user.setUsername(username);
         user.setPassword(password);
         
-        LoginAuthenticator l1 = new LoginAuthenticator();
+        AdminAuthenticator l1 = new AdminAuthenticator();
         boolean login = l1.isLogin(user);
         
         if(login)
         {
             HttpSession session = request.getSession(true);
             session.setAttribute("username", username);
-            response.sendRedirect("home.jsp");
+            response.sendRedirect("UserDetailsJSP.jsp");
         }
         else
-            response.sendRedirect("login2.html");
+            response.sendRedirect("admin.html");
     }
     
 }

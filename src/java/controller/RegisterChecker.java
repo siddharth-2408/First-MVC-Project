@@ -18,7 +18,7 @@ public class RegisterChecker extends HttpServlet
 {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
     {
-        response.sendRedirect("register.html");
+        response.sendRedirect("OpeningPage.html");
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
     {

@@ -16,7 +16,9 @@
         <title>All User Detail</title>
     </head>
     <body bgcolor = cyan>
-        <h1>Hello World!</h1>
+        <a href="logout.jsp">Sign Out</a>
+        <h1>Hello Admin!</h1>
+        <h1>User Details are as Follows</h1>
         <%
             UserDetails ob1 = new UserDetails();
             ArrayList<RegisterDTO> l2 = ob1.getAllUserDetails();
